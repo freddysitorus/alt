@@ -9,3 +9,40 @@ body {
 h1, h2 {
   line-height: 1.2;
 }
+
+/* Navbar container */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: white;
+  border-bottom: 1px solid #eee;
+}
+
+/* Inner layout */
+.nav-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 15px 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  opacity: 0.6;
+}
