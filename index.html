@@ -113,42 +113,42 @@
     }
 
     .hero-inner {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      gap: clamp(40px, 6vw, 100px);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto auto; /* both shrink to content size */
+  align-items: center;
+  justify-content: center; /* center the pair together */
+  gap: clamp(40px, 6vw, 100px);
     }
 
     /* LEFT — text */
     .hero-text { animation: fadeLeft 0.8s ease both; }
 
     .hero-label {
-      font-size: 0.75rem;
+      font-size: 0.95rem;
       letter-spacing: 0.2em;
-      text-transform: uppercase;
       color: var(--accent);
       margin-bottom: 18px;
     }
 
     .hero-name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3rem, 6vw, 5.5rem);
-      font-weight: 300;
+      font-size: clamp(3rem, 6vw, 7.5rem);
+      font-weight: 400;
       line-height: 1.05;
       letter-spacing: -0.01em;
       color: var(--text);
       margin-bottom: 16px;
     }
     .hero-name strong {
-      font-weight: 700;
+      font-weight: 800;
       display: block;
     }
 
     .hero-title {
-      font-size: 1rem;
+      font-size: 1.2rem;
       color: var(--muted);
       font-weight: 300;
       margin-bottom: 28px;
@@ -156,7 +156,7 @@
     }
 
     .hero-bio {
-      font-size: 0.9rem;
+      font-size: 1.3rem;
       color: var(--muted);
       line-height: 1.8;
       max-width: 460px;
