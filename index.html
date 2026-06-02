@@ -202,7 +202,7 @@
     }
 
     .hero-photo {
-      width: clamp(260px, 28vw, 400px);
+      width: clamp(260px, 28vw, 600px);
       aspect-ratio: 3/4;
       object-fit: cover;
       object-position: top center;
@@ -210,28 +210,8 @@
       border-radius: 4px;
       box-shadow: var(--shadow), 0 0 0 1px var(--card-border);
       /* frosted card feel behind the image */
-      outline: 8px solid rgba(8,8,12,0.35);
       outline-offset: -1px;
     }
-
-    /* placeholder if no photo yet */
-    .hero-photo-placeholder {
-      width: clamp(260px, 28vw, 400px);
-      aspect-ratio: 3/4;
-      border-radius: 4px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--card-border);
-      box-shadow: var(--shadow);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      color: var(--muted);
-      font-size: 0.8rem;
-      letter-spacing: 0.06em;
-    }
-    .hero-photo-placeholder svg { opacity: 0.3; }
 
     /* ── ANIMATIONS ── */
     @keyframes fadeLeft {
