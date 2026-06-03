@@ -18,7 +18,7 @@
       --card-border: rgba(255,255,255,0.08);
       --shadow: 0 8px 40px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.3);
       --gap: clamp(20px, 4vw, 60px);
-      --nav-height: 64px;
+      --nav-height: 50px;
     }
 
     html { scroll-behavior: smooth; }
@@ -55,36 +55,17 @@
       overflow: hidden;
       max-width: 95vw;
       margin: 0 auto;
-      background: #ffffff;
-      box-shadow: -12px 0 40px rgba(0,0,0,0.12), 12px 0 40px rgba(0,0,0,0.12);
       z-index: 100;
       height: var(--nav-height);
     }
     .nav-inner {
-      width: 95vw; /* matches hero max-width */
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-    .nav-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: var(--text);
-      letter-spacing: 0.04em;
-      text-decoration: none;
-    }
-    .nav-logo span { color: var(--accent); }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 36px;
-      list-style: none;
-    }
 
     .nav-links a {
-      font-size: 0.82rem;
+      font-size: 1rem;
       font-weight: 500;
       color: var(--muted);
       text-decoration: none;
@@ -98,12 +79,12 @@
       content: '';
       position: absolute;
       bottom: 0; left: 0;
-      width: 0; height: 1px;
+      width: 0; height: 4px;
       background: var(--accent);
       transition: width 0.25s ease;
     }
-    .nav-links a:hover { color: var(--text); }
-    .nav-links a:hover::after { width: 100%; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-links a:hover::after { width: 120%; }
 
     /* ── PAGE WRAPPER ── */
     .page {
