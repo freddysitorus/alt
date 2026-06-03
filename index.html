@@ -12,6 +12,7 @@
     :root {
       --accent: #c48f29;
       --text: #000000;
+      --text: #ffffff;
       --muted: #000000;
       --card-bg: rgba(8, 8, 12, 0.55);
       --card-border: rgba(255,255,255,0.08);
@@ -46,7 +47,7 @@
     }
 
     /* ── NAVBAR ── */
-    .nav {
+    nav {
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
@@ -115,7 +116,7 @@
   align-items: center;
   padding: 0 var(--gap);
   overflow: hidden;
-  max-width: 1100px;
+  max-width: 95vw;
   margin: 0 auto;
   background: #ffffff;
   box-shadow: -12px 0 40px rgba(0,0,0,0.12), 12px 0 40px rgba(0,0,0,0.12);
@@ -126,7 +127,7 @@
       position: absolute;
       top: 0;
       right: 0;
-      width: 35%;
+      width: 100%;
       height: 100%;
       z-index: 0;
       animation: fadeRight 1s ease 0.1s both;
@@ -175,7 +176,7 @@
       font-size: 1.2rem;
       letter-spacing: 0.2em;
       color: var(--accent);
-      margin-bottom: 20px;
+      margin: 20px 0 20px 0;
     }
     
     .hero-bio {
@@ -186,14 +187,10 @@
       margin-bottom: 30px;
     }
 
-    .hero-cta {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
+   
     .read-more {
   display: inline-block;
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: var(--accent);
   text-decoration: none;
   letter-spacing: 0.06em;
@@ -212,40 +209,12 @@
 }
 .read-more:hover::after { width: 100%; }
 
-    .btn {
-      padding: 11px 28px;
-      border-radius: 6px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.82rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      text-decoration: none;
-      cursor: pointer;
-      transition: all 0.22s;
-      display: inline-block;
-    }
-    .btn-primary {
-      background: var(--accent);
-      color: #080808;
-      border: 1px solid var(--accent);
-    }
-    .btn-primary:hover { background: #dfc08a; border-color: #dfc08a; }
-    .btn-ghost {
-      background: transparent;
-      color: var(--text);
-      border: 1px solid var(--card-border);
-    }
-    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
-
-    .hero-photo-spacer {
-      width: clamp(260px, 28vw, 480px);
-      visibility: hidden;
-    }
+    
 /* ── CONTACT ── */
 #contact {
   position: relative;
   z-index: 1;
+  max-width: 95vw;
   background: rgba(6, 6, 10, 0.6);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -260,15 +229,15 @@
 
 .contact-heading {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  font-weight: 400;
-  color: var(--text);
+  font-size: clamp(1rem, 4vw, 2.5rem);
+  font-weight: 600;
+  color: var(--accent);
   letter-spacing: 0.02em;
 }
 
 .contact-email {
   font-size: 1rem;
-  color: var(--accent);
+  color: var(--text2);
   text-decoration: none;
   letter-spacing: 0.08em;
   transition: color 0.2s;
@@ -279,7 +248,6 @@
   font-size: 0.9rem;
   color: var(--muted);
   letter-spacing: 0.1em;
-  text-transform: uppercase;
 }
 
 .contact-socials {
@@ -373,19 +341,16 @@
     </div>
 
     <div class="hero-inner">
-
-      <!-- LEFT: text -->
-      <div class="hero-text">
-        <div class="hero-label">Hello there!</div>
-
         
         <h1 class="hero-name">
           Freddy
           <strong>Sitorus</strong>
         </h1>
+      <!-- LEFT: text -->
+      <div class="hero-text">
+        <div class="hero-label">Hello there!</div>
         <p class="hero-bio">
-          I am Fred, from Pematangsiantar, Indonesia. 
-          Currently, I work as a Climate and Energy Economist at Climate Policy Initiative. 
+          I work as a Climate and Energy Economist at Climate Policy Initiative. 
           My work sits at the intersection of development economics, finance, climate and energy, and public policy.        
         </p>
         <a href="about.html" class="read-more">Read more →</a>
@@ -403,7 +368,7 @@
   <section id="contact">
   <h2 class="contact-heading">Contact me</h2>
 
-  <a href="mailto:fred@example.com" class="contact-email">fred@example.com</a>
+  <a href="mailto:fred@example.com" class="contact-email">fs2826@columbia.edu</a>
 
   <p class="contact-location">📍 Jakarta, Indonesia</p>
 
