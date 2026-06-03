@@ -116,56 +116,131 @@
       padding-top: var(--nav-height);
     }
 
-    /* CONTENT*/    
-  .hero {
-  position: relative;
-  overflow: hidden;
-  max-width: 95vw;
-  margin: 0 auto;
-  background: #ffffff;
-  box-shadow: -12px 0 40px rgba(0,0,0,0.12), 12px 0 40px rgba(0,0,0,0.12);
+/* MOBILE */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 14px 16px;
+  }
+  .navbar ul {
+    justify-content: center;
+    gap: 12px 18px;
+    margin: 0; 
+  }
+  .navbar a {
+    font-size: 0.8rem;
+  }
+}
+    /* HERO */
+    
+.hero {
+  padding: 80px 40px;
 }
 
-.hero-inner {
-  position: relative;
-  z-index: 2;
-  max-width: 95vw;
+.hero-container {
+  display: flex;
   align-items: center;
-}
-.hero-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(3rem, 6vw, 5.5rem);
-  font-weight: 400;
-  line-height: 1.05;
-  letter-spacing: -0.01em;
-  color: var(--text);
-  margin-bottom: 32px;
-}
-
-.hero-photo-wrap {
-  width: clamp(680px, 22vw, 680px);
-  aspect-ratio: 4/3;
-  margin-bottom: 36px;
-  border-radius: 4px;
-  object-position: top center;
-  overflow: hidden;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.07);
-}
-.hero-photo-wrap img {
+  justify-content: space-between;
+  gap: 60px;
   width: 100%;
-  height: 100%;
+  max-width: 1200px;
+  padding: 10 20px;   
+  margin: 0 auto;
+}
+
+.hero-left {
+  text-align: center;
+}
+
+.profile-pic {
+  width: 200px;
+  height: 250px;
+  max-width: 100%;
+  height: auto;
   object-fit: cover;
-  object-position: top center;
-  display: block;
+  border-radius: 0%;
+  margin-bottom: 10px;
 }
 
-.hero-bio {
-  font-size: 1.2rem;
-  color: var(--muted);
-  line-height: 1.8;
-  margin-bottom: 16px;
+.hero-left h1 {
+  font-size: 1.7rem;
+  color: #774028;
+  margin-bottom: 10px;
 }
 
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  font-size: 1.6rem;
+  color: #774028;
+}
+
+.hero-right {
+  max-width: 1200px;
+}
+
+.hero-right p {
+  margin-bottom: 14px;
+  line-height: 1.1;
+  font-size: 1.4rem;
+}
+    /* DOWNLOAD CV BUTTON */
+.btn {
+  display: inline-block;
+  padding: 4px 8px;
+  background: #e5c2a6;
+  color: #000000;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-radius: 6px;
+  margin-top: 2px;
+}
+
+.btn:hover {
+  background: #774028;
+  color: white;
+  transform: translateY(-2px);
+}
+    /* mobile friendly */
+    @media (max-width: 768px) {
+  .hero {
+    padding: 40px 20px;
+  }
+
+  .hero-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .hero-left {
+    text-align: center;
+  }
+
+  .profile-pic {
+    width: 180px;
+  }
+
+  .hero-right {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .hero-right p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .social-icons {
+    gap: 16px;
+  }
+}
     /* MAIN CONTAINER */
 .content-container {
   display: flex;
@@ -278,84 +353,227 @@
 .exp-details p {
   line-height: 1.1;
 }
+ /* Research */
 
-    /* ── ANIMATIONS ── */
-    @keyframes fadeLeft {
-      from { opacity: 0; transform: translateX(-28px); }
-      to   { opacity: 1; transform: translateX(0); }
-    }
-    @keyframes fadeRight {
-      from { opacity: 0; transform: translateX(28px); }
-      to   { opacity: 1; transform: translateX(0); }
+.research-right {
+  text-align: left;
+}
+
+.research-right h1 {
+  margin: 0 0 2px 0;
+  font-size: 1.5rem;
+  line-height: 1.7;
+}
+
+.research-right p {
+  margin: 0 0 1px 0;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}   
+/* DOWNLOAD Paper BUTTON */
+    .btn-paper {
+      display: inline-block;
+      padding: 2px 4px;
+      color: #000000;
+      font-size: 0.85rem;
+      text-decoration: none;
+      border-radius: 1px;
+      margin: 5px 0 1 0;
     }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 700px) {
-      .hero-photo-fullscreen { width: 100%; opacity: 0.25; }
-      .hero-photo-fullscreen::before {
-        background: linear-gradient(to bottom,
-          rgba(8,8,8,0.5) 0%,
-          rgba(8,8,8,0.2) 100%
-        );
-      }
-      .hero-inner {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      .hero-photo-spacer { display: none; }
-      .hero-bio { margin-left: auto; margin-right: auto; }
-      .hero-cta { justify-content: center; }
-      .nav-links { gap: 20px; }
-      #contact {
-        height: auto;
-        padding: 16px var(--gap);
-        flex-direction: column;
-        gap: 14px;
-        text-align: center;
-      }
-      .contact-links { gap: 20px; flex-wrap: wrap; justify-content: center; }
+    .btn-paper:hover {
+      background: #774028;
+       color: white;
+       transform: translateY(-2px);
     }
+ .section {
+  padding: 50px 0;
+  border-bottom: 1px solid #bfc5bc;
+}
+
+.section:last-of-type {
+  border-bottom: none;
+}
+    a {
+  color: inherit;         /* same color as text */
+  text-decoration: none;  /* remove underline */
+}
+
+a:hover {
+  color: #8f5a3d;
+       transform: translateY(-2px);
+    }
+/* ===== MOBILE LAYOUT FIX ===== */
+@media (max-width: 768px) {
+
+  /* STACK SECTION TITLE ON TOP */
+  .content-container {
+    flex-direction: column;
+    gap: 20px;
+    width: 92%;
+  }
+
+  .content-left {
+    flex: unset;
+    width: 100%;
+  }
+
+  .content-left h1 {
+    text-align: center;
+    font-size: 1.6rem;
+  }
+
+  /* STACK EDUCATION ITEMS VERTICALLY */
+  .education-grid {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    row-gap: 20px;
+    gap: 20px;
+  }
+
+  /* EXPERIENCE STACK */
+  .experience-item {
+    grid-template-columns: 36px 1fr;
+    column-gap: 10px;
+    row-gap: 0;
+  }
+  .logo {
+    justify-content: flex-start;
+  }
+  .exp-logo {
+    width: 28px;
+    height: 28px;
+  }
+  /* GENERAL TEXT SPACING */
+  .content-right {
+    width: 100%;
+  }
+
+  .edu-details,
+  .exp-details {
+    width: 100%;
+  }
+
+  /* SECTION SPACING */
+  .section {
+    padding: 30px 0;
+  }
+
+  /* RESEARCH */
+  .research-right {
+    text-align: left;
+  }
+
+  /* LINKS */
+  a:hover {
+    transform: none; /* prevents weird jump on mobile */
+  }
+}
+    /* FLOATING BUTTON */
+    .floating-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #8f5a3d;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .floating-btn:hover {
+      transform: scale(1.1) translateY(-2px);
+      background: #e5c2a6;
+       color: white;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+   /* CONTACT */
+.contact-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  align-items: center;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-icon {
+  font-size: 1.1rem;
+  color: #18392b;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+
+.contact-details p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #18392b;
+}
   </style>
 </head>
+
 <body>
 
-<!-- BACKGROUND -->
-<div class="bg-fixed"></div>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#writing">Research</a></li>
+    </ul>
+  </nav>
 
-<!-- NAVBAR -->
-<nav>
-  <div class ="nav-inner">
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html" class="active">Resume</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#research">Research</a></li>
-  </ul>
-  </div>
-</nav>
+    <!-- HERO -->
+ <section class="section" id="about">
+  <div class="hero-container">
 
-<!-- PAGE -->
-<div class="page">
+    <!-- HERO LEFT  -->
+    <div class="hero-left">
+      <img src="picture.png" alt="Freddy Sitorus" class="profile-pic">
 
+      <h1>Freddy Sitorus</h1>
 
-  <!-- HERO -->
- <section id="home" class="hero">
-  <div class="hero-inner">
-
-    <h1 class="hero-name"> Freddy Sitorus</h1>
-
-    <div class="hero-photo-wrap">
-      <img src="picture2.png" alt="Profile photo" />
-    </div>
-    <p class="hero-bio">
-      I'm Fred, an economist and development practitioner from Indonesia with over seven years of experience across the private sector, multilateral institutions, and applied research.
-      In the private sector, I have held senior leadership roles across corporate finance and development projects. On the multilateral side, I have worked with the United Nations Executive Office of the Secretary-General on financing for development, and with the UNDP Regional Bureau for Africa supporting impact evaluation and donor funding project tracking.
-      I bring both quantitative expertise and field research experience, including evaluating a financial inclusion and independence program for female farmers in Kenya.
-      I hold a MPA in Development Economics and Quantitative Analysis, and a BA in Economics and Finance. My interests lie at the intersection of development economics, finance, climate and energy, and public policy.
+      <div class="social-icons">
+        <a href="#contact"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://twitter.com/freddyhys" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://linkedin.com/in/freddyhys" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://medium.com/@freddysitorus" target="_blank"><i class="fa-brands fa-medium"></i></a>
+        
+      </div>
     </div>
 
+    <!-- HERO RIGHT -->
+    <div class="hero-right">
+      <p>
+        Hello! 
+         <p>
+I'm Fred, an economist and development practitioner from Indonesia with over seven years of experience across the private sector, multilateral institutions, and applied research.
+      </p>
+
+      <p>
+In the private sector, I have held senior leadership roles across corporate finance and development projects. On the multilateral side, I have worked with the United Nations Executive Office of the Secretary-General on financing for development, and with the UNDP Regional Bureau for Africa supporting impact evaluation and donor funding project tracking.
+      </p>
+  <p>
+I bring both quantitative expertise and field research experience, including evaluating a financial inclusion and independence program for female farmers in Kenya.
+      </p>
+      <p>
+I hold a MPA in Development Economics and Quantitative Analysis, and a BA in Economics and Finance. My interests lie at the intersection of development economics, finance, climate and energy, and public policy.      </p>
+
+      <p>
+         <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="btn" title="View paper"> Download CV
+      </a>
   </div>
-  </section>
+</section>
 
       <!-- CONTENT -->
 
@@ -480,8 +698,66 @@
     </div>
   </div>
 </section>
-</div>
+    
+    <!-- Research & Writing -->
+<section class="section" id="writing">
+  <div class="content-container">
+    <div class="content-left">
+      <h1>Research</h1>
+    </div>
+
+      <div class="content-right">
+    <div class="research-right">
+ <p><strong>The Economic Impact of Village Funds and Pre-Existing BUMDes:
+</strong><em>A Difference-in-Differences Analysis with Evidence from East Java</em></p>
+      <p>This paper examines how institutional capacity influences the effectiveness of fiscal decentralization using Indonesia’s Village Fund policy as a case study. Employing a difference-in-differences approach, it finds that villages with pre-existing BUMDes before the 2015 policy experienced a 53% greater increase in log village income compared to those without, even after controlling for key characteristics. The results are supported by event study and parallel trend analyses, and further show that the benefits are strongest in medium-poverty villages and those led by more educated leaders, highlighting the importance of absorptive capacity and leadership quality. Conversely, impacts are weaker in high-poverty and densely populated villages, indicating the need for more tailored interventions, such as increased funding for larger populations. Overall, the findings suggest that successful decentralization depends on institutional readiness, offering broader lessons for countries where weak local capacity has limited policy effectiveness.
+      <a href="writing 1.pdf" class="btn-paper" target="_blank" rel="noopener noreferrer" title="View paper">
+  <i class="fa-solid fa-download"></i></i>
+</a>
+        </p>
+    <p>
+      <p><strong>Mobile learning, Lasting Impact: from Digital Upskilling to Economic Empowerment for Rural Women in Kenya:</strong> <em>A Case Study of One Acre Fund</em></p>
+   <p>This study examines One Acre Fund’s (OAF) digital transformation, in partnership with the Gates Foundation, to digitize its female field force and support rural women farmers in developing microenterprises through the Learn.Ink platform. Using qualitative data from fieldwork conducted in March 2025 across three regions in Kenya (Webuye, Nambilima, and Koteku), including one focus group and 16 semi-structured interviews, the research evaluates two workstreams: digital engagement of field officers and women’s microenterprise development. While initial adoption of digital tools was high, sustained engagement was constrained by time poverty, connectivity challenges, data costs, limited device access, and low digital confidence. Findings indicate that digital interventions can enhance women’s economic empowerment only when aligned with users’ lived realities and supported by enabling conditions. The study highlights the importance of accessible training design and supportive delivery mechanisms, and offers insights for scaling gender-sensitive digital programs in similar contexts.
+       <a href="https://www.sipa.columbia.edu/sipa-education/capstone-workshops/mobile-learning-lasting-impact-digital-upskilling-economic.pdf" class="btn-paper" target="_blank" rel="noopener noreferrer" title="View paper">
+  <i class="fa-solid fa-download"></i></i></i>
+</a>
+     </p>
+        </div>
+    </section>
+
+ <!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="content-container">
+    <div class="content-left">
+      <h1>Contact Me</h1>
+    </div>
+
+    <div class="content-right contact-list">
+      <div class="contact-item">
+        <div class="contact-icon">
+          <i class="fa-solid fa-envelope"></i>
+        </div>
+        <div class="contact-details">
+          <p>fs2826@columbia.edu</p>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">
+          <i class="fa-solid fa-location-dot"></i>
+        </div>
+        <div class="contact-details">
+          <p>New York, USA</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <!-- FLOATING BUTTON -->
+<a href="#contact" class="floating-btn">
+  <i class="fa-solid fa-user"></i>
+</a>
 
 </body>
 </html>
-```
