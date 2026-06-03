@@ -11,8 +11,8 @@
 
     :root {
       --accent: #c8a96e;
-      --text: #f0ede8;
-      --muted: rgba(240,237,232,0.55);
+      --text: #ffffff;
+      --muted: #ffffff;
       --card-bg: rgba(8, 8, 12, 0.55);
       --card-border: rgba(255,255,255,0.08);
       --shadow: 0 8px 40px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.3);
@@ -41,7 +41,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(5, 5, 8, 0.58);
+      background: rgba(255, 255, 255, 0.55);
     }
 
     /* ── NAVBAR ── */
@@ -64,17 +64,9 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.3rem;
       font-weight: 600;
-      color: var(--text);
+      color: var(--accent);
       letter-spacing: 0.04em;
       text-decoration: none;
-    }
-    .nav-logo span { color: var(--accent); }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 36px;
-      list-style: none;
     }
 
     .nav-links a {
@@ -144,7 +136,7 @@
 }
 
 .hero-photo-wrap {
-  width: clamp(180px, 22vw, 280px);
+  width: clamp(480px, 22vw, 480px);
   aspect-ratio: 3/4;
   margin-bottom: 36px;
   border-radius: 4px;
@@ -171,7 +163,7 @@
   font-size: 0.95rem;
   color: var(--muted);
   line-height: 1.8;
-  max-width: 520px;
+  max-width: 720px;
   margin-bottom: 16px;
 }
 
@@ -185,16 +177,6 @@
   position: relative;
   padding-bottom: 2px;
 }
-.read-more::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--accent);
-  transition: width 0.25s ease;
-}
-.read-more:hover::after { width: 100%; }
 
 .hero-cta {
   display: flex;
@@ -309,7 +291,7 @@
 
 <!-- NAVBAR -->
 <nav>
-  <a href="#home" class="nav-logo">Fred <span>Sitorus</span></a>
+  <a href="#home" class="nav-logo">About</span></a>
   <ul class="nav-links">
     <li><a href="#home">Home</a></li>
     <li><a href="#education">Education</a></li>
@@ -326,12 +308,11 @@
   <div class="hero-inner">
 
     <h1 class="hero-name">
-      Freddy
-      <strong>Sitorus</strong>
+      Freddy <strong>Sitorus</strong>
     </h1>
 
     <div class="hero-photo-wrap">
-      <img src="picture1.png" alt="Profile photo" />
+      <img src="picture2.png" alt="Profile photo" />
     </div>
     <p class="hero-bio">
       I'm Fred, an economist and development practitioner from Indonesia with over seven years of experience across the private sector, multilateral institutions, and applied research.
