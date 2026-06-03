@@ -1,52 +1,28 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <title>Fred Sitorus - Resume</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fred Sitorus - About</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --accent: #c48f29;
-      --black: #000000;
-      --white: #ffffff;
-      --gray: #cccdc6;
-      --card-bg: rgba(8, 8, 12, 0.55);
-      --card-border: rgba(255,255,255,0.08);
-      --shadow: 0 8px 40px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.3);
-      --gap: clamp(20px, 4vw, 60px);
-      --nav-height: 64px;
-    }
-
-    html { scroll-behavior: smooth; }
-
+    html {
+  scroll-behavior: smooth;
+}
     body {
-      font-family: 'DM Sans', sans-serif;
-      color: var(--text);
-      min-height: 100vh;
-      background: #080808;
-      overflow-x: hidden;
+      font-family: 'EB Garamond', sans-serif;
+      font-size: 20px;
+      margin: 0 auto;
+      background-image: url('background1.jpg');
+      background-attachment: scroll;
+      background-repeat: repeat-y;
+      background-size: 100% auto;
+      background-position: top center;
     }
-
-    /* ── BACKGROUND ── */
-    .bg-fixed {
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      background: url('background1.jpg') center/cover no-repeat;
-    }
-    .bg-fixed::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(255, 255, 255, 0.55);
-    }
-
-    /* ── NAVBAR ── */
+    
+  /* ── NAVBAR ── */
     nav {
      position: fixed;
       top: 0; left: 0; right: 0;
@@ -108,6 +84,7 @@
     }
     .nav-links a:hover { color: var(--black); }
     .nav-links a:hover::after { width: 100%; }
+
 
     /* ── PAGE WRAPPER ── */
     .page {
@@ -534,11 +511,12 @@ a:hover {
   </nav>
 
     <!-- HERO -->
+ <section class="section" id="about">
   <div class="hero-container">
 
     <!-- HERO LEFT  -->
     <div class="hero-left">
-      <img src="picture1.png" alt="Freddy Sitorus" class="profile-pic">
+      <img src="picture.png" alt="Freddy Sitorus" class="profile-pic">
 
       <h1>Freddy Sitorus</h1>
 
