@@ -10,9 +10,9 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --accent: #c8a96e;
-      --text: #f0ede8;
-      --muted: rgba(240,237,232,0.55);
+      --accent: #c48f29;
+      --text: #000000;
+      --muted: #000000;
       --card-bg: rgba(8, 8, 12, 0.55);
       --card-border: rgba(255,255,255,0.08);
       --shadow: 0 8px 40px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.3);
@@ -37,11 +37,12 @@
       z-index: 0;
       background: url('background1.jpg') center/cover no-repeat;
     }
-    .bg-fixed::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(5, 5, 8, 0.58);
+   .bg-fixed::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.55);
+}
     }
 
     /* ── NAVBAR ── */
@@ -165,10 +166,10 @@
     .hero-text { animation: fadeLeft 0.8s ease both; }
 
     .hero-label {
-      font-size: 0.95rem;
+      font-size: 1.2rem;
       letter-spacing: 0.2em;
       color: var(--accent);
-      margin-bottom: 18px;
+      margin-bottom: 30px;
     }
 
     .hero-name {
@@ -184,14 +185,6 @@
       font-weight: 800;
       color: var(--accent);
       display: block;
-    }
-
-    .hero-title {
-      font-size: 1.2rem;
-      color: var(--muted);
-      font-weight: 300;
-      margin-bottom: 28px;
-      line-height: 1.6;
     }
 
     .hero-bio {
@@ -393,16 +386,19 @@
       <!-- LEFT: text -->
       <div class="hero-text">
         <div class="hero-label">Hello there!</div>
+
+        
         <h1 class="hero-name">
           Freddy
           <strong>Sitorus</strong>
         </h1>
-        <p class="hero-title">· Economist · Development Practitioner</p>
         <p class="hero-bio">
-          I am Fred, from Pematangsiantar, Indonesia. Currently, I am a Climate and Energy Economist at Climate Policy Initiative. My work sits at the intersection of development economics, finance, climate and energy, and public policy.        </p>
+          I am Fred, from Pematangsiantar, Indonesia. 
+          Currently, I work as a Climate and Energy Economist at Climate Policy Initiative. 
+          My work sits at the intersection of development economics, finance, climate and energy, and public policy.        
+        </p>
         <a href="about.html" class="read-more">Read more →</a>
         <div class="hero-cta">
-          <a href="#downloadcv" class="btn btn-primary">Download CV</a>
         </div>
       </div>
 
