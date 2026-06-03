@@ -8,18 +8,41 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    html {
-  scroll-behavior: smooth;
-}
-    body {
-      font-family: 'EB Garamond', sans-serif;
-      font-size: 20px;
-      margin: 0 auto;
-      background-image: url('background1.jpg');
-      background-attachment: scroll;
-      background-repeat: repeat-y;
-      background-size: 100% auto;
-      background-position: top center;
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent: #c48f29;
+      --black: #000000;
+      --white: #ffffff;
+      --gray: #cccdc6;
+      --card-bg: rgba(8, 8, 12, 0.55);
+      --card-border: rgba(255,255,255,0.08);
+      --shadow: 0 8px 40px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.3);
+      --gap: clamp(20px, 4vw, 60px);
+      --nav-height: 50px;
+    }
+
+    html { scroll-behavior: smooth; }
+ body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--black);
+      min-height: 100vh;
+      background: #080808;
+      overflow-x: hidden;
+    }
+
+    /* ── BACKGROUND ── */
+    .bg-fixed {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background: url('background1.jpg') center/cover no-repeat;
+    }
+    .bg-fixed::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.55);
     }
     
   /* ── NAVBAR ── */
