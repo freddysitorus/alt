@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +17,7 @@
       --card-border: rgba(255,255,255,0.08);
       --shadow: 0 8px 40px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.3);
       --gap: clamp(20px, 4vw, 60px);
+      --nav-height: 64px;
     }
 
     html { scroll-behavior: smooth; }
@@ -48,7 +50,7 @@
       top: 0; left: 0; right: 0;
       z-index: 100;
       padding: 0 var(--gap);
-      height: 64px;
+      height: var(--nav-height);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -101,26 +103,62 @@
     .page {
       position: relative;
       z-index: 1;
-      padding-top: 64px; /* offset for fixed nav */
+      padding-top: var(--nav-height);
     }
 
     /* ── HERO ── */
     .hero {
-      min-height: 100svh;
+      position: relative;
+      min-height: calc(100svh - var(--nav-height));
       display: flex;
       align-items: center;
       padding: 0 var(--gap);
+      overflow: hidden;
+    }
+
+    /* Fullscreen profile photo */
+    .hero-photo-fullscreen {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 48%;
+      height: 100%;
+      z-index: 0;
+      animation: fadeRight 1s ease 0.1s both;
+    }
+
+    .hero-photo-fullscreen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    .hero-photo-fullscreen::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right,
+        #080808 0%,
+        rgba(8,8,8,0.85) 20%,
+        rgba(8,8,8,0.3) 55%,
+        transparent 100%
+      );
+      z-index: 1;
     }
 
     .hero-inner {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: auto auto; /* both shrink to content size */
-  align-items: center;
-  justify-content: center; /* center the pair together */
-  gap: clamp(40px, 6vw, 100px);
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: auto auto;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(40px, 6vw, 100px);
     }
 
     /* LEFT — text */
@@ -196,23 +234,63 @@
     }
     .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
 
-    /* RIGHT — profile photo */
-    .hero-photo-wrap {
-      flex-shrink: 0;
-      animation: fadeRight 0.8s ease 0.15s both;
+    .hero-photo-spacer {
+      width: clamp(260px, 28vw, 480px);
+      visibility: hidden;
     }
 
-    .hero-photo {
-      width: clamp(260px, 28vw, 600px);
-      aspect-ratio: 3/4;
-      object-fit: cover;
-      object-position: top center;
-      display: block;
-      border-radius: 4px;
-      box-shadow: var(--shadow), 0 0 0 1px var(--card-border);
-      /* frosted card feel behind the image */
-      outline-offset: -1px;
+    /* ── CONTACT ── */
+    #contact {
+      position: relative;
+      z-index: 1;
+      background: rgba(6, 6, 10, 0.6);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-top: 1px solid var(--card-border);
+      padding: 0 var(--gap);
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
+
+    .contact-left {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: 0.04em;
+    }
+    .contact-left span { color: var(--accent); }
+
+    .contact-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .contact-links a {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+      position: relative;
+      padding-bottom: 4px;
+    }
+    .contact-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 1px;
+      background: var(--accent);
+      transition: width 0.25s ease;
+    }
+    .contact-links a:hover { color: var(--text); }
+    .contact-links a:hover::after { width: 100%; }
 
     /* ── ANIMATIONS ── */
     @keyframes fadeLeft {
@@ -226,16 +304,29 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 700px) {
+      .hero-photo-fullscreen { width: 100%; opacity: 0.25; }
+      .hero-photo-fullscreen::before {
+        background: linear-gradient(to bottom,
+          rgba(8,8,8,0.5) 0%,
+          rgba(8,8,8,0.2) 100%
+        );
+      }
       .hero-inner {
         grid-template-columns: 1fr;
-        grid-template-rows: auto auto;
         text-align: center;
-        gap: 40px;
       }
-      .hero-photo-wrap { order: -1; margin: 0 auto; }
+      .hero-photo-spacer { display: none; }
       .hero-bio { margin-left: auto; margin-right: auto; }
       .hero-cta { justify-content: center; }
       .nav-links { gap: 20px; }
+      #contact {
+        height: auto;
+        padding: 16px var(--gap);
+        flex-direction: column;
+        gap: 14px;
+        text-align: center;
+      }
+      .contact-links { gap: 20px; flex-wrap: wrap; justify-content: center; }
     }
   </style>
 </head>
@@ -260,6 +351,16 @@
 
   <!-- HERO -->
   <section id="home" class="hero">
+
+    <!-- FULLSCREEN PHOTO -->
+    <div class="hero-photo-fullscreen">
+      <img
+        src="picture.png"
+        alt="Profile photo"
+        onerror="this.style.opacity='0'"
+      />
+    </div>
+
     <div class="hero-inner">
 
       <!-- LEFT: text -->
@@ -271,7 +372,7 @@
         </h1>
         <p class="hero-title">· Economist · Development Practitioner</p>
         <p class="hero-bio">
-          I have over seven years of experience across the private sector, multilateral institutions, and applied research.          
+          I have over seven years of experience across the private sector, multilateral institutions, and applied research.
           I hold a MPA in Development Economics and Quantitative Analysis, and a BA in Economics and Finance. My interests lie at the intersection of development economics, finance, climate and energy, and public policy.
         </p>
         <div class="hero-cta">
@@ -280,26 +381,25 @@
         </div>
       </div>
 
-      <!-- RIGHT: photo -->
-      <div class="hero-photo-wrap">
-        <img
-          class="hero-photo"
-          src="picture.png"
-          alt="Profile photo"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-        />
-        <div class="hero-photo-placeholder" style="display:none;">
-          <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-            <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-          </svg>
-          picture.png
-        </div>
-      </div>
+      <!-- Spacer so text doesn't stretch full width -->
+      <div class="hero-photo-spacer"></div>
 
     </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-left">Contact <span>me</span></div>
+    <ul class="contact-links">
+      <li><a href="mailto:fs2826@columbia.edu">Email</a></li>
+      <li><a href="https://linkedin.com/in/freddyhys" target="_blank">LinkedIn</a></li>
+      <li><a href="https://x.com/freddyhys" target="_blank">X(twitter)</a></li>
+      <li><a href="#home">Back to Top ↑</a></li>
+    </ul>
   </section>
 
 </div>
 
 </body>
 </html>
+```
