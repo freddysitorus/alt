@@ -198,7 +198,7 @@
       font-size: 1.3rem;
       color: var(--muted);
       line-height: 1.8;
-      max-width: 460px;
+      max-width: 660px;
       margin-bottom: 40px;
     }
 
@@ -207,6 +207,26 @@
       gap: 14px;
       flex-wrap: wrap;
     }
+    .read-more {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  margin-bottom: 28px;
+  position: relative;
+  padding-bottom: 2px;
+}
+.read-more::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.25s ease;
+}
+.read-more:hover::after { width: 100%; }
 
     .btn {
       padding: 11px 28px;
@@ -379,12 +399,10 @@
         </h1>
         <p class="hero-title">· Economist · Development Practitioner</p>
         <p class="hero-bio">
-          I have over seven years of experience across the private sector, multilateral institutions, and applied research.
-          I hold a MPA in Development Economics and Quantitative Analysis, and a BA in Economics and Finance. My interests lie at the intersection of development economics, finance, climate and energy, and public policy.
-        </p>
+          I am Fred, from Pematangsiantar, Indonesia. Currently, I am a Climate and Energy Economist at Climate Policy Initiative. My work sits at the intersection of development economics, finance, climate and energy, and public policy.        </p>
+        <a href="about.html" class="read-more">Read more →</a>
         <div class="hero-cta">
-          <a href="#research" class="btn btn-primary">View Research</a>
-          <a href="#experience" class="btn btn-ghost">My Experience</a>
+          <a href="#downloadcv" class="btn btn-primary">Download CV</a>
         </div>
       </div>
 
