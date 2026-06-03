@@ -101,80 +101,78 @@
 
     /* ── HERO ── */
    .hero {
-     position: relative;
-     overflow: hidden;
-     max-width: 95vw;
-     margin: 0 auto;
-     background: #ffffff;
-     box-shadow: -12px 0 40px rgba(0,0,0,0.12), 12px 0 40px rgba(0,0,0,0.12);
-   }
-    .hero-inner {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      height: 100%;
-      display: grid;
-      grid-template-columns: 1fr 40%;
-      align-items: stretch;
-    }
+  position: relative;
+  min-height: calc(100svh - var(--nav-height));
+  overflow: hidden;
+  max-width: 95vw;
+  margin: 0 auto;
+  background: #ffffff;
+  box-shadow: -12px 0 40px rgba(0,0,0,0.12), 12px 0 40px rgba(0,0,0,0.12);
+}
 
-    /* Fullscreen profile photo */
-    .hero-photo-fullscreen {
-      position: relative;
-      top: 0;
-      right: 0;
-      height: 100%;
-      overflow: hidden;
-      animation: fadeRight 1s ease 0.1s both;
-    }
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  min-height: calc(100svh - var(--nav-height));
+  display: grid;
+  grid-template-columns: 1fr 40%;
+  align-items: stretch;
+}
 
-    .hero-photo-fullscreen img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-      display: block;
-    }
+.hero-text {
+  padding: 60px var(--gap);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: fadeLeft 0.8s ease both;
+}
 
-    /* LEFT — text */
-    .hero-text { 
-      padding: 60px var(--gap);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      animation: fadeLeft 0.8s ease both; }
+.hero-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 6vw, 7.5rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+.hero-name strong {
+  font-weight: 800;
+  color: var(--accent);
+  display: block;
+}
 
-    .hero-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3rem, 6vw, 7.5rem);
-      font-weight: 400;
-      line-height: 1.05;
-      letter-spacing: -0.01em;
-      color: var(--text);
-      margin-left: 20px;
-      margin-bottom: 60px;
-    }
-    .hero-name strong {
-      font-weight: 800;
-      color: var(--accent);
-      display: block;
-    }
- .hero-label {
-      font-size: 1.2rem;
-      letter-spacing: 0.2em;
-      color: var(--accent);
-      margin: 20px 0 20px 0;
-    }
-    
-    .hero-bio {
-      font-size: 1.3rem;
-      color: var(--muted);
-      line-height: 1.8;
-      max-width: 660px;
-      margin-bottom: 30px;
-    }
+.hero-label {
+  font-size: 1.2rem;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
 
-   
+.hero-bio {
+  font-size: 1.3rem;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 660px;
+  margin-bottom: 30px;
+}
+
+.hero-photo-fullscreen {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  animation: fadeRight 1s ease 0.1s both;
+}
+
+.hero-photo-fullscreen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+} 
     .read-more {
   display: inline-block;
   font-size: 1rem;
@@ -319,37 +317,29 @@
 
   <!-- HERO -->
   <section id="home" class="hero">
+  <div class="hero-inner">
 
-    <div class="hero-inner">
-        
-        <h1 class="hero-name">
-          Freddy
-          <strong>Sitorus</strong>
-        </h1>
-      <!-- LEFT: text -->
-      <div class="hero-text">
-        <div class="hero-label">Hello there!</div>
-        <p class="hero-bio">
-          I work as a Climate and Energy Economist at Climate Policy Initiative. 
-          My work sits at the intersection of development economics, finance, climate and energy, and public policy.        
-        </p>
-        <a href="about.html" class="read-more">Read more →</a>
-        <div class="hero-cta">
-        </div>
-      </div>
- <!-- FULLSCREEN PHOTO -->
+    <!-- LEFT -->
+    <div class="hero-text">
+      <h1 class="hero-name">
+        Freddy
+        <strong>Sitorus</strong>
+      </h1>
+      <div class="hero-label">Hello there!</div>
+      <p class="hero-bio">
+        I am an Economist at Climate Policy Initiative.
+        My work sits at the intersection of development economics, finance, climate and energy, and public policy.
+      </p>
+      <a href="about.html" class="read-more">Read more →</a>
+    </div>
+
+    <!-- RIGHT -->
     <div class="hero-photo-fullscreen">
-      <img
-        src="picture1.png"
-        alt="Profile photo"
-        onerror="this.style.opacity='0'"
-      />
+      <img src="picture1.png" alt="Profile photo" onerror="this.style.opacity='0'" />
     </div>
-      <!-- Spacer so text doesn't stretch full width -->
-      <div class="hero-photo-spacer"></div>
 
-    </div>
-  </section>
+  </div>
+</section>
 
   <!-- CONTACT -->
   <section id="contact">
