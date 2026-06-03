@@ -132,7 +132,13 @@
     /* HERO */
     
 .hero {
-  padding: 80px 40px;
+  position: relative;
+  height: calc(85svh - var(--nav-height));
+  overflow: hidden;
+  max-width: 95vw;
+  margin: 0 auto;
+  background: #ffffff;
+  box-shadow: -12px 0 40px rgba(0,0,0,0.12), 12px 0 40px rgba(0,0,0,0.12);
 }
 
 .hero-container {
@@ -141,9 +147,12 @@
   justify-content: space-between;
   gap: 60px;
   width: 100%;
-  max-width: 1200px;
   padding: 10 20px;   
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  align-items: stretch;
 }
 
 .hero-left {
@@ -161,7 +170,7 @@
 }
 
 .hero-left h1 {
-  font-size: 1.7rem;
+  font-size: 1.4rem;
   color: #774028;
   margin-bottom: 10px;
 }
