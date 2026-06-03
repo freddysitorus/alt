@@ -268,6 +268,26 @@
   height: 40px;
   fill: currentColor;
 }
+    .side-label {
+  position: fixed;
+  left: calc(2.5vw + 12px); /* sits inside the 95vw content area */
+  top: 50%;
+  transform: translateY(-50%) rotate(270deg);
+  transform-origin: center center;
+  z-index: 50;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
+}
+    .side-label span {
+      color: var(--accent);
+      font-weight: 800;
+    }
+    
     footer {
   position: relative;
   z-index: 1;
@@ -283,6 +303,7 @@
 
 footer span {
   color: var(--accent);
+  font-weight: 800;
 }
 
     /* ── ANIMATIONS ── */
@@ -394,6 +415,7 @@ footer span {
     <p class="contact-location">📍 Jakarta, Indonesia</p>
   </div>
 </section>
+  <div class="side-label">Fred Sitorus — <span>Home</span></div>
   <footer>
   <p>© 2026 <span>Freddy Sitorus</span></p>
 </footer>
