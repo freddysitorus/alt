@@ -48,17 +48,17 @@
 
     /* ── NAVBAR ── */
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      height: var(--nav-height);
+      position: relative;
       display: flex;
       align-items: center;
-      justify-content: center;
-      background: rgba(6, 6, 10, 0.6);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--card-border);
+      padding: 0 var(--gap);
+      overflow: hidden;
+      max-width: 95vw;
+      margin: 0 auto;
+      background: #ffffff;
+      box-shadow: -12px 0 40px rgba(0,0,0,0.12), 12px 0 40px rgba(0,0,0,0.12);
+      z-index: 100;
+      height: var(--nav-height);
     }
     .nav-inner {
       width: 95vw; /* matches hero max-width */
@@ -131,7 +131,7 @@
       position: absolute;
       top: 0;
       right: 0;
-      width: 100%;
+      width: 40%;
       height: 100%;
       z-index: 0;
       animation: fadeRight 1s ease 0.1s both;
