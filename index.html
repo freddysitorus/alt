@@ -108,14 +108,18 @@
     }
 
     /* ── HERO ── */
-    .hero {
-      position: relative;
-      min-height: calc(100svh - var(--nav-height));
-      display: flex;
-      align-items: center;
-      padding: 0 var(--gap);
-      overflow: hidden;
-    }
+   .hero {
+  position: relative;
+  min-height: calc(100svh - var(--nav-height));
+  display: flex;
+  align-items: center;
+  padding: 0 var(--gap);
+  overflow: hidden;
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #ffffff;
+  box-shadow: -12px 0 40px rgba(0,0,0,0.12), 12px 0 40px rgba(0,0,0,0.12);
+}
 
     /* Fullscreen profile photo */
     .hero-photo-fullscreen {
@@ -136,19 +140,6 @@
       display: block;
     }
 
-    .hero-photo-fullscreen::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to right,
-        #080808 0%,
-        rgba(8,8,8,0.85) 20%,
-        rgba(8,8,8,0.3) 55%,
-        transparent 100%
-      );
-      z-index: 1;
-    }
-
     .hero-inner {
       position: relative;
       z-index: 2;
@@ -165,13 +156,6 @@
     /* LEFT — text */
     .hero-text { animation: fadeLeft 0.8s ease both; }
 
-    .hero-label {
-      font-size: 1.2rem;
-      letter-spacing: 0.2em;
-      color: var(--accent);
-      margin-bottom: 30px;
-    }
-
     .hero-name {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(3rem, 6vw, 7.5rem);
@@ -179,20 +163,27 @@
       line-height: 1.05;
       letter-spacing: -0.01em;
       color: var(--text);
-      margin-bottom: 16px;
+      margin-left: 20px;
+      margin-bottom: 60px;
     }
     .hero-name strong {
       font-weight: 800;
       color: var(--accent);
       display: block;
     }
-
+ .hero-label {
+      font-size: 1.2rem;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    
     .hero-bio {
       font-size: 1.3rem;
       color: var(--muted);
       line-height: 1.8;
       max-width: 660px;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
 
     .hero-cta {
