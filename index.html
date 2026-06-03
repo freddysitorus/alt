@@ -47,34 +47,30 @@
     }
 
     /* ── NAVBAR ── */
-   nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  height: var(--nav-height);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(6, 6, 10, 0.6);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--card-border);
-}
-
-.nav-inner {
-  width: 95vw;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.nav-links {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 36px;
-  list-style: none;
-}
+    nav {
+     position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid var(--card-border)}
+    
+    .nav-inner {
+      width: 95vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .nav-links {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
     .nav-links a {
       font-size: 1rem;
       font-weight: 500;
@@ -90,7 +86,7 @@
       content: '';
       position: absolute;
       bottom: 0; left: 0;
-      width: 0; height: 4px;
+      width: 0; height: 2px;
       background: var(--accent);
       transition: width 0.25s ease;
     }
