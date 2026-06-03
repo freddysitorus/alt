@@ -38,12 +38,11 @@
       z-index: 0;
       background: url('background1.jpg') center/cover no-repeat;
     }
-   .bg-fixed::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.55);
-}
+    .bg-fixed::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.55);
     }
 
     /* ── NAVBAR ── */
@@ -72,7 +71,7 @@
       list-style: none;
     }
     .nav-links a {
-      font-size: 1rem;
+      font-size: 0.9rem;
       font-weight: 500;
       color: var(--muted);
       text-decoration: none;
@@ -91,7 +90,7 @@
       transition: width 0.25s ease;
     }
     .nav-links a:hover { color: var(--accent); }
-    .nav-links a:hover::after { width: 120%; }
+    .nav-links a:hover::after { width: 100%; }
 
     /* ── PAGE WRAPPER ── */
     .page {
