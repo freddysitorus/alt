@@ -51,17 +51,21 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      padding: 0 var(--gap);
       height: var(--nav-height);
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       background: rgba(6, 6, 10, 0.6);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--card-border);
     }
-
+    .nav-inner {
+      width: 95vw; /* matches hero max-width */
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
     .nav-logo {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.3rem;
@@ -316,6 +320,7 @@
 
 <!-- NAVBAR -->
 <nav>
+  <div class ="nav-inner">
   <a href="#home" class="nav-logo">Fred <span>Sitorus</span></a>
   <ul class="nav-links">
     <li><a href="#home">Home</a></li>
@@ -323,6 +328,7 @@
     <li><a href="#experience">Experience</a></li>
     <li><a href="#research">Research</a></li>
   </ul>
+  </div>
 </nav>
 
 <!-- PAGE -->
