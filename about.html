@@ -134,7 +134,16 @@
   display: flex;
   flex-direction: column;
 }
-
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 6vw, 6.5rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--black);
+  text-align: center;
+  margin-bottom: 16px;
+}
 .hero-text {
   padding: 60px var(--gap);
   display: flex;
@@ -352,9 +361,6 @@ footer span {
     <!-- LEFT -->
     <div class="hero-text">
       <h1 class="hero-name">
-        Freddy Sitorus
-      </h1>
-      <h1 class="hero-name">
   <span class="name-first">Freddy</span>
   <span class="name-last">Sitorus</span>
 </h1>
@@ -370,6 +376,12 @@ footer span {
    I hold a MPA in Development Economics and Quantitative Analysis, and a BA in Economics and Finance. My interests lie at the intersection of development economics, finance, climate and energy, and public policy.
       </p>
   </div>
+    <p class="hero-title">
+      Education
+    </p>
+    <p class="hero-title">
+      Experience
+    </p>
 </section>
 
   <section id="contact">
