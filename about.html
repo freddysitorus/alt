@@ -134,16 +134,6 @@
   display: flex;
   flex-direction: column;
 }
-.hero-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2rem, 6vw, 6.5rem);
-  font-weight: 400;
-  line-height: 1.05;
-  letter-spacing: -0.01em;
-  color: var(--black);
-  text-align: center;
-  margin-bottom: 16px;
-}
 .hero-text {
   padding: 60px var(--gap);
   display: flex;
@@ -174,11 +164,11 @@
 }
 .hero-bio {
   font-size: 1.3rem;
-  color: var(--muted);
+  color: var(--black);
   line-height: 1.8;
-  max-width: 660px;
-  margin-left: 220px;
+  max-width: 80%;
   margin-bottom: 30px;
+  text-align: justify;
 }
 
 .hero-photo-fullscreen {
@@ -195,7 +185,51 @@
   display: block;
   margin: 0 auto;
 }
+  .hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--black);
+  text-align: center;
+  margin-bottom: 16px;
+}
+.hero-content {
+   font-size: 1.3rem;
+  color: var(--black);
+  line-height: 1.8;
+  max-width: 80%;
+  margin-bottom: 30px;
+  text-align: justify;
+}
+hr {
+  border: none;
+  border-top: 1px solid var(--accent);
+  width: 20%; /* adjust length here */
+  margin: 40px auto;
+}
 
+    /*EDUCATION*/
+    .content-right {
+   margin: 0;
+  line-height: 1.1;
+}
+    .education-grid {
+  display: grid;
+  grid-template-columns: 40px 1fr 40px 1fr;
+  column-gap: 18px;
+  align-items: start;
+}
+
+.edu-details {
+  text-align: left;
+}
+    .logo {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
     /* ── CONTACT ── */
 #contact {
   position: relative;
@@ -376,12 +410,47 @@ footer span {
    I hold a MPA in Development Economics and Quantitative Analysis, and a BA in Economics and Finance. My interests lie at the intersection of development economics, finance, climate and energy, and public policy.
       </p>
   </div>
+    <br>
     <p class="hero-title">
       Education
     </p>
+    <hr>
+    <br>
+ <div class="content-right">
+      <div class="education-grid">
+        <div class="logo">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+
+        <div class="edu-details">
+          <h3>Master of Public Administration</h3>
+          <p>Economic Development &amp; Quantitative Analysis</p>
+          <p>
+            <a href="https://www.columbia.edu" target="_blank">
+              Columbia University,
+            </a> United States (2025)
+          </p>
+        </div>
+
+        <div class="logo">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+
+        <div class="edu-details">
+          <h3>Bachelor of Economics</h3>
+          <p>Finance Management</p>
+          <p>
+            <a href="https://usu.ac.id" target="_blank">
+              Universitas Sumatera Utara,
+            </a> Indonesia (2015)
+          </p>        
+        </div>
+      </div>
+    </div>      
     <p class="hero-title">
       Experience
     </p>
+    <hr>
 </section>
 
   <section id="contact">
