@@ -128,16 +128,14 @@
 
 .hero-inner {
   position: relative;
+  max-width: 95vw;
   z-index: 2;
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: 40% 1fr ;
+  grid-template-columns: 25% 1fr ;
   align-items: stretch;
 }
 
 .hero-text {
-  padding: 60px var(--gap);
+  padding: 0 var(--gap);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -146,16 +144,16 @@
 
 .hero-name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(3rem, 6vw, 8.5rem);
+  font-size: clamp(3rem, 6vw, 4.5rem);
   font-weight: 400;
   line-height: 1.05;
   letter-spacing: -0.01em;
   color: var(--black);
-  margin-left: 40px;
+  margin-left: 20px;
   margin-bottom: 16px;
 }
 .hero-label {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: var(--black);
   font-weight: 500;
   margin-bottom: 20px;
@@ -180,7 +178,9 @@
   object-position: top center;
   display: block;
   margin: 20px auto 20px auto;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15), 0 2px 8px rgba(0,0,0,0.08);
 }
+    
 .read-more {
   display: inline-block;
   font-size: 1rem;
@@ -370,9 +370,35 @@ footer span {
     </div>
     <!-- RIGHT -->
     <div class="hero-text">
-      <div class="hero-label">Mobile learning, Lasting Impact: from Digital Upskilling to Economic Empowerment for Rural Women in Kenya: A Case Study of One Acre Fund</div>
+      <div class="hero-label">Mobile learning, Lasting Impact: <em>from Digital Upskilling to Economic Empowerment for Rural Women in Kenya</em></div>
       <p class="hero-bio">
-        A 2025 field study across three regions in Kenya — drawing on focus groups and 16 in-depth interviews — explores how digital tools can unlock economic opportunity for women farmers, and what stands in the way.
+        This study examines One Acre Fund's program to digitize its female field force and support rural women farmers through the Learn.Ink platform. 
+        Drawing on fieldwork conducted in March 2025 across three regions in Kenya, including one focus group and 16 semi-structured interviews, 
+        the research evaluates digital engagement of field officers and women's microenterprise development. While initial adoption was high, 
+        sustained engagement was constrained by time poverty, connectivity challenges, data costs, and low digital confidence. 
+        Findings suggest digital interventions can drive women's economic empowerment only when aligned with users' lived realities and backed by enabling conditions.      </p>
+      <a href="about.html" class="read-more">Read more →</a>
+    </div>
+</div>
+    <br><br>
+    <div class="hero-inner">
+      <!-- LEFT -->
+    <div class="hero-photo-fullscreen">
+      <img src="cover2.png" alt="Profile photo" onerror="this.style.opacity='0'" />
+    </div>
+    <!-- RIGHT -->
+    <div class="hero-text">
+      <div class="hero-label">The Economic Impact of Village Funds and Pre-Existing BUMDes: <br>
+        <em>A Difference-in-Differences Analysis with Evidence from East Java</em></div>
+      <p class="hero-bio">
+        This paper examines how institutional capacity influences the effectiveness of fiscal decentralization using Indonesia’s Village Fund policy as a case study. 
+        Employing a difference-in-differences approach, it finds that villages with pre-existing BUMDes before the 2015 policy experienced a 53% greater increase in 
+        log village income compared to those without, even after controlling for key characteristics. The results are supported by event study and parallel trend analyses, 
+        and further show that the benefits are strongest in medium-poverty villages and those led by more educated leaders, 
+        highlighting the importance of absorptive capacity and leadership quality. Conversely, impacts are weaker in high-poverty and densely populated villages, 
+        indicating the need for more tailored interventions, such as increased funding for larger populations. 
+        Overall, the findings suggest that successful decentralization depends on institutional readiness, offering broader lessons for countries 
+        where weak local capacity has limited policy effectiveness
       </p>
       <a href="about.html" class="read-more">Read more →</a>
     </div>
