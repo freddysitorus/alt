@@ -196,7 +196,7 @@
   letter-spacing: -0.01em;
   color: var(--black);
   text-align: center;
-  margin: 20px auto 2px auto;
+  margin: 100px auto 10px auto;
 }
 .hero-content {
   font-size: 1.5rem;
@@ -224,14 +224,20 @@ hr {
   column-gap: 18px;
   align-items: start;
   max-width: 75%;
+      row-gap: 10px;
   margin: 40px auto 40px auto ;
 }
 
 .edu-details {
   text-align: left;
 }
+    . edu-details span {
+      color: var(--accent);
+      font-weight: 700;
+    }
     .logo {
   display: flex;
+      color: var(--accent);
   justify-content: flex-end;
   align-items: flex-start;
 }
@@ -296,6 +302,10 @@ hr {
   width: 40px;
   height: 40px;
   fill: currentColor;
+}
+    a {
+  color: inherit;
+  text-decoration: none;
 }
     .side-label {
   position: fixed;
@@ -428,7 +438,7 @@ footer span {
         </div>
 
         <div class="edu-details">
-          <h3>Master of Public Administration</h3>
+          <span>Master of Public Administration</span>
           <p>Economic Development &amp; Quantitative Analysis</p>
           <p>
             <a href="https://www.columbia.edu" target="_blank">
@@ -442,7 +452,7 @@ footer span {
         </div>
 
         <div class="edu-details">
-          <h3>Bachelor of Economics</h3>
+          <span>Bachelor of Economics</span>
           <p>Finance Management</p>
           <p>
             <a href="https://usu.ac.id" target="_blank">
