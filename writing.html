@@ -131,9 +131,10 @@
   max-width: 85vw;
   z-index: 2;
   display: grid;
-  grid-template-columns: 25% 1fr ;
+  grid-template-columns: 25% 1fr;
   align-items: stretch;
-  margin-bottom: 40px;
+  margin: 0 auto 40px auto;
+  padding-left: 40px;
 }
 
 .hero-text {
@@ -146,12 +147,15 @@
 
 .hero-name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-size: clamp(3rem, 6vw, 3.5rem);
   font-weight: 400;
+  max-width: 85vw;
   line-height: 1.05;
   letter-spacing: -0.01em;
   color: var(--black);
-  margin: 40px auto 50px 40px;
+  margin: 40px auto 50px auto;
+  padding-left: 20px;
+
 }
 .hero-label {
   font-size: 1.5rem;
@@ -208,7 +212,9 @@ hr {
   border: none;
   border-top: 2px solid var(--accent);
   width: 10%; /* adjust length here */
-  margin: 10px auto auto 30px;
+  max-width: 85vw;
+  margin: 10px auto;
+  padding-left: 20px;
 }
     /* ── CONTACT ── */
 #contact {
